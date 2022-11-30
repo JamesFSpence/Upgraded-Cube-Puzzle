@@ -42,7 +42,6 @@ public class UtilityMethods {
 	
 	
 	public static int[][] getRotationMatrix(PieceHalf piecehalf, Orientation destination) {
-		//TOTEST
 		int[][] rotationMatrix = new int[3][3];
 		int[][] used = new int[3][2];
 		int count = 0;
