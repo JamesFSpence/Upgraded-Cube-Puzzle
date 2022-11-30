@@ -101,7 +101,6 @@ public class UtilityMethods {
 	}
 	
 	public static int[] getNewPosition(int[] currentPosition, int[][] rotationMatrix, int topOrBot) {
-		//TOTEST
 		int[] newPosition = new int[3];
 		int value;
 		int[] direction = {0,0,0};
@@ -122,7 +121,6 @@ public class UtilityMethods {
 	}
 	
 	public static Orientation getNewOrientation(int[][] rotationMatrix,Piece attachingPiece, int topOrBot) {
-		//TOTEST
 		int pointValue;
 		int slabValue;
 		PieceHalf activeHalf;
@@ -149,7 +147,6 @@ public class UtilityMethods {
 	}
 	
 	public static DetailedPosition AttachPiece(Piece piece, DetailedPosition currentDetailedPosition, int topOrBot) {
-		//TOTEST
 		Orientation destination = currentDetailedPosition.orientation.getCompatibleOrientation();
 		PieceHalf origin;
 		
@@ -190,8 +187,8 @@ public class UtilityMethods {
 		for (int i = 0; i<128; i++) {
 			String binaryString = Integer.toBinaryString(i);
 			int l = binaryString.length();
-			String formattedBinaryString = ("0000000" + Integer.toBinaryString(i)).substring(l);
-			String[] flippings = formattedBinaryString.split("(?!^)");
+			String formattedBinaryString = ("0000000" + Integer.toBinaryString(i)).substring(l); //Format with leading zeros so the string 7 characters
+			String[] flippings = formattedBinaryString.split("(?!^)"); //Split into to an array of characters
 			for (String perm:permutations) {
 				int i6 = (perm.indexOf('6'));
 				if (flippings[i6].equals("1")) {
